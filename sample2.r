@@ -1,21 +1,3 @@
-
-for(i in 1:270){
-webpage1 <- read_html(webpages[i])
-
-name <- webpage1 %>%
-  html_nodes("h1") %>%
-  html_text()
-
-summarys <- webpage1 %>%
-  html_nodes(".single-post-content-textproject-content-text p") %>%
-  html_text()
-
-description <- webpage1 %>%
-  html_nodes(".wpb_wrapper p") %>%
-  html_text()
-
-description <- stringr::str_c(description,collapse = " ")
-
 p_meta <- webpage1 %>%
   html_nodes(".item-meta-value")  %>%
   html_text()
